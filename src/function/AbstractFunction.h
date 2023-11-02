@@ -6,8 +6,16 @@
 #define FRACTAL_ABSTRACTFUNCTION_H
 
 
+#include "../common/auxiliary.h"
+
 class AbstractFunction {
-    virtual double evaluate(double x);
+public:
+    AbstractFunction(){}
+
+    virtual complexNumber evaluate(complexNumber c, complexNumber z) = 0;
+    virtual complexNumber evaluate(complexNumber c) = 0;
+    virtual int isInSet(complexNumber c) = 0;
+
 };
 
 

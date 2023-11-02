@@ -7,8 +7,9 @@
 
 
 #include <complex>
+#include "AbstractFunction.h"
 
-class MandelbrotFunction {
+class MandelbrotFunction : public AbstractFunction{
 private:
     int N;
 public:
@@ -17,9 +18,12 @@ public:
         this->N = N;
     }
 
-    std::complex<double> evaluate(std::complex<double> c, std::complex<double> z);
+    complexNumber evaluate(complexNumber c, complexNumber z) override;
+    complexNumber evaluate(complexNumber c) override;
 
-    bool isInSet(std::complex<double> c);
+    int isInSet(std::complex<double> c);
+
+    int escaped(std::complex<double> c);
 };
 
 

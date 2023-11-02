@@ -7,30 +7,35 @@
 
 #include <complex>
 #include <vector>
+#include "common/auxiliary.h"
+#include "function/AbstractFunction.h"
+#include "function/MandelbrotFunction.h"
 
 using namespace std;
-
-typedef complex<double> complexNumber;
-typedef vector<vector<double>> _mesh;
 
 class Mesh {
 public:
     int resolutionReal;
     int resolutionImaginary;
 
-    complexNumber lowerLeft;
-    complexNumber upperRight;
+    complex<double> lowerLeft;
+    complex<double> upperRight;
 
-    _mesh field;
+    vector<vector<complexNumber>> field;
 
-    Mesh(int resolutionReal, int resolutionImaginary,
-         const complexNumber &lowerLeft=-2-1j, const complexNumber &upperRight=1+1j);
+    Mesh(int resolutionReal=2, int resolutionImaginary=4,
+         const complex<double> &lowerLeft= -2 - 1j, const complex<double> &upperRight= 1 + 1j);
 
 
-    _mesh createMesh() const;
+    vector<vector<complexNumber>> createMesh() const;
     void printMesh();
+    void printMeshAsCommandLineMatrix();
+    complexNumber pointToComplex(int pX, int pY) const;
+    tuple<int, int> complexToPoint(complex<double> z) const;
 
-//    _mesh evaluateOnMesh(Function);
+
+    Mesh evaluate(AbstractFunction &function);
+
 };
 
 

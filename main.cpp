@@ -1,15 +1,20 @@
 #include <iostream>
-#include "src/function/AbstractFunction.h"
 #include "src/function/MandelbrotFunction.h"
-#include "src/Fractal.h"
+#include "src/Mesh.h"
+#include <opencv2/opencv.hpp>
 
 int main() {
     MandelbrotFunction mandelbrotFunction;
+    std::cout << "Here 1" << std::endl;
 
 //    Fractal fractal(mandelbrotFunction);
-//    mesh mesh1 = fractal.createMesh();
-//    fractal.printMesh(mesh1);
+    Mesh mesh(70, 40);
 
-    std::cout << mandelbrotFunction.isInSet(12) << std::endl;
+//    mesh.printMesh();
+//    std::cout << "----------------------------------------------------" << std::endl;
+    Mesh result = mesh.evaluate(mandelbrotFunction);
+    result.printMeshAsCommandLineMatrix();
+
+    std::cout << "Is in set?: " << mandelbrotFunction.isInSet(0) << std::endl;
     return 0;
 }

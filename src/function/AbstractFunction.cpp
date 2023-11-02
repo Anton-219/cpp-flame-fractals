@@ -3,3 +3,7 @@
 //
 
 #include "AbstractFunction.h"
+
+//complexNumber AbstractFunction::evaluate(complexNumber c, complexNumber z) {
+//    return complexNumber();
+//}
