@@ -1,7 +1,6 @@
 #include <iostream>
 #include "src/function/MandelbrotFunction.h"
 #include "src/Mesh.h"
-#include <opencv2/opencv.hpp>
 
 int main() {
     MandelbrotFunction mandelbrotFunction;
