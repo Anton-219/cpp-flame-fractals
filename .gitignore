@@ -32,3 +32,8 @@
 *.app
 
 cmake-build-debug
+build
+.gitignore
+.idea
+.vscode
+manual command
