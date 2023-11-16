@@ -37,3 +37,5 @@ build
 .idea
 .vscode
 manual command
+*.jpg
+*.png

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.16)
 project(fractal)
 
 #include_directories(/run/host/usr/include/opencv4)
@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(fractal main.cpp ../cpp-flame-fractals/src/function/AbstractFunction.cpp ../cpp-flame-fractals/src/function/AbstractFunction.h ../cpp-flame-fractals/src/function/MandelbrotFunction.cpp ../cpp-flame-fractals/src/function/MandelbrotFunction.h ../cpp-flame-fractals/src/Fractal.cpp ../cpp-flame-fractals/src/Fractal.h ../cpp-flame-fractals/src/Mesh.cpp ../cpp-flame-fractals/src/Mesh.h src/common/auxiliary.h)
 
 # target_link_libraries(fractal PRIVATE nlohmann_json::nlohmann_json)
-target_link_libraries(fractal PRIVATE opencv_ml opencv_dnn opencv_core opencv_flann)
+target_link_libraries(fractal PRIVATE opencv_ml opencv_dnn opencv_core opencv_flann opencv_highgui opencv_dnn)
 
 #target_include_directories(fractal PUBLIC /usr/include/opencv4/)
 #include_directories(/usr/include/opencv4)

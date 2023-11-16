@@ -5,24 +5,22 @@
 #ifndef FRACTAL_FRACTAL_H
 #define FRACTAL_FRACTAL_H
 
+#include <opencv2/core/utility.hpp>
 
 #include <vector>
 #include "function/MandelbrotFunction.h"
 
-typedef std::vector<std::vector<double>> mesh;
-
-class Fractal {
+class Fractal
+{
 private:
     MandelbrotFunction function;
+    int rows, cols;
 
 public:
-    Fractal(MandelbrotFunction function);
-    mesh evaluateOnRectangle(std::complex<double> lowerLeft=-2-1j,
-                                                         std::complex<double> upperRight=1+1j);
 
-
-
+    Fractal(MandelbrotFunction function, int rows=400, int cols=400);
+    cv::Mat evaluateOnRectangle(std::complex<double> lowerLeft = -2 - 1j,
+                             std::complex<double> upperRight = 1 + 1j);
 };
 
-
-#endif //FRACTAL_FRACTAL_H
+#endif // FRACTAL_FRACTAL_H
