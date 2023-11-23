@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.16)
 project(fractal)
 
 #include_directories(/run/host/usr/include/opencv4)
-# find_package(nlohmann_json CONFIG REQUIRED)
 find_package(OpenCV CONFIG REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
