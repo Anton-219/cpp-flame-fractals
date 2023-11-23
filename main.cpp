@@ -22,9 +22,14 @@ int main()
     MandelbrotFunction mandelbrotFunction;
     std::cout << "Here 1" << std::endl;
 
-    Fractal fractal(mandelbrotFunction, 400, 800);
+    Fractal fractal(mandelbrotFunction, 2000, 3000);
     cv::Mat mat = fractal.evaluateOnRectangle();
+    // cv::Mat mat(2, 2, CV_8UC3, cv::Scalar(0,0,255));
+    // // mat.at<u_int8_t>(1,1,1) = (u_int8_t) 2;
+    // mat.at<cv::Vec3b>(0,0) = 2*cv::Vec3b(42,12,0);
+    // mat.at<cv::Vec3b>(0,1) = cv::Vec3b(168,0,41);
     cv::imwrite("bild.png", mat);
+    // mat.at(x,y) = 1;
     // std::cout << mat << std::endl;
 
     // std::cout << mat << std::endl;

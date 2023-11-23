@@ -21,6 +21,7 @@ public:
     Fractal(MandelbrotFunction function, int rows=400, int cols=400);
     cv::Mat evaluateOnRectangle(std::complex<double> lowerLeft = -2 - 1j,
                              std::complex<double> upperRight = 1 + 1j);
+    cv::Vec3b chooseColor(int n);
 };
 
 #endif // FRACTAL_FRACTAL_H

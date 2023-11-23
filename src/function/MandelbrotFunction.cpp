@@ -16,6 +16,7 @@ std::complex<double> MandelbrotFunction::evaluate(std::complex<double> c){
     return z;
 }
 
+// Determines the number 
 int MandelbrotFunction::escaped(std::complex<double> c){
     std::complex<double> z = 0;
     for (int i = 0; i < N; i++){
